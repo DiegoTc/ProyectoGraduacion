@@ -1,0 +1,5 @@
+<dependency>
+    <groupId>com.github.dandelion</groupId>
+    <artifactId>datatables-jsp</artifactId>
+    <version>0.8.14</version>
+</dependency>
