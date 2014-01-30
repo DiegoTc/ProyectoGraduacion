@@ -14,11 +14,12 @@ String id= request.getParameter("id");
 if(id == null){
     XBeeLightDetails lig = new XBeeLightDetails();
     int[] payload= new int[1];
-    String json=lig.areLightsOn(payload);
+    String json=lig.areLightsOnAd(payload,"/dev/ttyUSB0");
     out.print(json);
 }
 else{
-    if(id=="1"){
+    int ipOpt=Integer.parseInt(id);
+    if(ipOpt==0){
         String action=request.getParameter("action");
         XBeeControlLights control = new XBeeControlLights();
         int opt=Integer.parseInt(action);
@@ -26,11 +27,27 @@ else{
          
         if(opt==1){
             infor[0]=0;
-            control.turnOnLights(infor);
+            control.turnOnLightsAddr(infor,"/dev/ttyUSB0");
         }
         else if (opt==0){
             infor[0]=1;
-            control.turnOnLights(infor);
+            control.turnOnLightsAddr(infor,"/dev/ttyUSB0");
+        }
+        
+    }
+    else if(ipOpt==1){
+        String action=request.getParameter("action");
+        XBeeControlLights control = new XBeeControlLights();
+        int opt=Integer.parseInt(action);
+        int []infor = new int[1];
+         
+        if(opt==1){
+            infor[0]=2;
+            control.turnOnLightsAddr(infor,"/dev/ttyUSB0");
+        }
+        else if (opt==0){
+            infor[0]=3;
+            control.turnOnLightsAddr(infor,"/dev/ttyUSB0");
         }
         
     }

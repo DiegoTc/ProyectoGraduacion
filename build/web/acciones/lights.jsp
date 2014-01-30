@@ -166,22 +166,22 @@ Author     : diego
         var oTable = TableTools.fnGetInstance( 'example' );
         var filas=oTable.fnGetSelectedData();
         if ($(this).is(':checked')) {
-            var idLight="id"+filas[0].codigo;
+            var idLight=filas[0].codigo;
             $.ajax({
                 url: 'lightaction.jsp',
                 type: 'GET',
-                data:  "id="+idLight+"action="+1,
-                success: alert("Hola")
+                data:  "id="+idLight+"&action="+1
+                //success: alert("Hola")
             });
         }
         else
         {
-             var idLight="id"+filas[0].codigo;
+             var idLight=filas[0].codigo;
             $.ajax({
                 url: 'lightaction.jsp',
                 type: 'GET',
-                data:  "id="+idLight+"action="+0,
-                success: alert("Hola2")
+                data:  "id="+idLight+"&action="+0
+                //success: alert("Hola2")
             });    
         }
     });

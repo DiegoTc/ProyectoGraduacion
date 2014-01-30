@@ -5,21 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.dataBase.connecttoDatabase" %>
+<%@page import="exdatabase.ConnecttoDatabase" %>
 
 <%
 String id= request.getParameter("id");
 if(id.equals("tomacorriente")){
     String codigo=request.getParameter("codigo");
-    com.dataBase.connecttoDatabase.getInstancia().deleteTomacorrientes(codigo);
+    exdatabase.ConnecttoDatabase.getInstancia().deleteTomacorrientes(codigo);
 }
 else if(id.equals("luces")){
     String codigo=request.getParameter("codigo");
-    com.dataBase.connecttoDatabase.getInstancia().deleteLuces(codigo);
+    exdatabase.ConnecttoDatabase.getInstancia().deleteLuces(codigo);
+   
 }
 else if(id.equals("xbee")){
     String codigo=request.getParameter("codigo");
-    com.dataBase.connecttoDatabase.getInstancia().deleteXBee(codigo);
+     exdatabase.ConnecttoDatabase.getInstancia().deleteXBee(codigo);
 }
 
 %>

@@ -4,11 +4,11 @@
     Author     : diego
 --%>
 
-<%@page import="com.dataBase.connecttoDatabase" %>
+<%@page import="exdatabase.ConnecttoDatabase" %>
 
 <%
     //  String data=dataBase.connecttoDatabase.getInstancia().getDispositivosXBee().toString();
-    String data=com.dataBase.connecttoDatabase.getInstancia().getDispositivosTomacorrientes().toString();
+    String data=exdatabase.ConnecttoDatabase.getInstancia().getDispositivosTomacorrientes().toString();
     out.println(data);
 %>
 

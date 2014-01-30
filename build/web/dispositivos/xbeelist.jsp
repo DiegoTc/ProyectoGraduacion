@@ -5,12 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.dataBase.connecttoDatabase" %>
+<%@page import="exdatabase.ConnecttoDatabase" %>
 
 <%
     //  String data=dataBase.connecttoDatabase.getInstancia().getDispositivosXBee().toString();
 {    
-String data=com.dataBase.connecttoDatabase.getInstancia().getDispositivosXBee().toString();
+String data=exdatabase.ConnecttoDatabase.getInstancia().getDispositivosXBee().toString();
     out.println(data);
 }
 %>
